@@ -1,10 +1,10 @@
-import { Link } from "@tanstack/react-router"
+// import { Link } from "@tanstack/react-router"
 import { useCallback } from "react"
 import { useAtomValue, useSetAtom } from "jotai"
 import { useIsFetching } from "@tanstack/react-query"
 import clsx from "clsx"
 import type { SourceID } from "@shared/types"
-import { Homepage, Version } from "@shared/consts"
+// import { Homepage, Version } from "@shared/consts"
 import { NavBar } from "../navbar"
 import { Menu } from "./menu"
 import { currentSourcesAtom, goToTopAtom, refetchSourcesAtom } from "~/atoms"
@@ -51,20 +51,8 @@ function Refresh() {
 export function Header() {
   return (
     <>
-      <span className="flex justify-self-start">
-        <Link to="/" className="flex gap-2 items-center">
-          <div className="h-10 w-10 bg-cover" title="logo" style={{ backgroundImage: "url(/icon.svg)" }} />
-          <span className="text-2xl font-brand line-height-none!">
-            <p>News</p>
-            <p className="mt--1">
-              <span className="color-primary-6">N</span>
-              <span>ow</span>
-            </p>
-          </span>
-        </Link>
-        <a target="_blank" href={`${Homepage}/releases/tag/v${Version}`} className="btn text-sm ml-1 font-mono">
-          {`v${Version}`}
-        </a>
+      <span className="flex">
+        热点
       </span>
       <span className="justify-self-center">
         <span className="hidden md:(inline-block)">
