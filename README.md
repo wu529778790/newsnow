@@ -1,50 +1,44 @@
 # NewsNow
-![](screenshots/preview.light.png#gh-light-mode-only)
-![](screenshots/preview.dark.png#gh-dark-mode-only)
 
-English | [简体中文](README.zh-CN.md)
+***优雅地阅读实时热门新闻***
 
-***Elegant reading of real-time and hottest news***
+## 部署
 
-## Deployment
+如果不需要登录，缓存，可以直接部署到 Cloudflare Pages，Vercel 等。Fork 之后在对应平台上导入即可。Cloudflare Pages 的构建输出文件夹是 `dist/output/public`。
 
-If login and caching are not required, you can directly deploy to platforms like Cloudflare Pages or Vercel. Just fork the repository and import it into the respective platform. The build output directory for Cloudflare Pages is `dist/output/public`.
-
-For login, which involves GitHub OAuth, you only need to [create a GitHub App](https://github.com/settings/applications/new). No special permissions are required. After creating the app, you will get a Client ID and Client Secret. Different platforms have different places to set environment variables; refer to the `example.env.server` file. If running locally, rename it to `.env.server` and add the necessary values.
+登录涉及到 Github Oauth，只需要 [创建一个 Github App](https://github.com/settings/applications/new) 即可，不需要申请任何权限。然后就会得到 Client ID 和 Client Secret。关于环境变量，不同平台有不同的填写位置，请关注 `example.env.server` 文件。如果本地运行，需要将其重命名为 `.env.server`，然后按照要求添加。
 
 ```env
-# Github Client ID
+# Github Clien ID
 G_CLIENT_ID=
-# Github Client Secret
+# Github Clien Secret
 G_CLIENT_SECRET=
-# JWT Secret, usually the same as Client Secret
+# JWT Secret, 通常就用 Clien Secret
 JWT_SECRET=
-# Initialize database, must be set to true on first run, can be turned off afterward
+# 初始化数据库, 首次运行必须设置为 true，之后可以将其关闭
 INIT_TABLE=true
 ```
 
-This project primarily supports deployment on Cloudflare Pages and Docker. For Vercel, you need to set up your own database. Supported databases can be found at https://db0.unjs.io/connectors .
+本项目主推 Cloudflare Pages 以及 Docker 部署， Vercel 需要你自行搞定数据库，其他支持的数据库可以查看 https://db0.unjs.io/connectors 。
 
-Cloudflare D1 database is free to use. You can manually create a database in the Cloudflare Worker control panel and add the `database_id` and `database_name` to the corresponding positions in `wrangler.toml`. The changes will take effect on the next deployment.
+Cloudflare D1 数据库可以免费使用，在 Cloudflare Worker 控制面板里找到 D1 手动创建数据库，将 `database_id` 以及 `database_name` 填入 `wrangler.toml` 对应位置即可。下次部署时就可以生效了。
 
-For Docker deployment. In the project root directory with `docker-compose.yml`, run
-
-```sh
+Docker 部署，只需要项目根目录 `docker-compose.yaml` 文件，同一目录下执行
+```
 docker compose up
 ```
 
-## Development
-
+## 开发
 > [!TIP]
-> Node version >= 20
+> node version >= 20
 
-```sh
+```bash
 corepack enable
 pnpm i
 pnpm dev
 ```
 
-If you want to add data sources, refer to the `shared/metadata`, `shared/sources`, and `server/sources` directories. The project has complete types and a simple structure; feel free to explore.
+你可能想要添加数据源，请关注 `shared/metadata` `shared/sources` `server/sources`，项目类型完备，结构简单，请自行探索。
 
 ## License
 
