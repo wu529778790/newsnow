@@ -39,7 +39,3 @@ pnpm dev
 ```
 
 你可能想要添加数据源，请关注 `shared/metadata` `shared/sources` `server/sources`，项目类型完备，结构简单，请自行探索。
-
-## License
-
-[MIT](./LICENSE) © ourongxing

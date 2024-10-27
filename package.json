@@ -6,11 +6,11 @@
   "commit-id": "",
   "packageManager": "pnpm@9.12.1",
   "author": {
-    "url": "https://github.com/ourongxing/",
-    "email": "orongxing@gmail.com",
-    "name": "ourongxing"
+    "url": "https://github.com/wu529778790/",
+    "email": "529778790@gmail.com",
+    "name": "wu529778790"
   },
-  "homepage": "https://github.com/ourongxing/newsnow",
+  "homepage": "https://github.com/wu529778790/newsnow",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
